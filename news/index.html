@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Stay updated with the latest technology news, leaks, and announcements.">
+<title>Latest Tech News — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/news.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>News</span></nav>
+<div class="section-header"><h1 class="section-title">Latest News</h1></div>
+<div class="news-filters"><button class="filter-btn active">All</button><button class="filter-btn">Leaks</button><button class="filter-btn">Apple</button><button class="filter-btn">Google</button><button class="filter-btn">Xiaomi</button><button class="filter-btn">OnePlus</button><button class="filter-btn">Nothing</button><button class="filter-btn">Chipsets</button><button class="filter-btn">Android</button><button class="filter-btn">Samsung</button><button class="filter-btn">Sony</button></div>
+<div class="news-grid">
+<a href="/news/samsung-galaxy-s26-ultra-leaked.html" class="card news-card"><img class="card-image" src="/img/news/news1.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-red">Leaks</span><span>July 5, 2026</span></div><div class="card-title">Samsung Galaxy S26 Ultra Design Leaked — Slimmer Bezels, New Camera Module</div><div class="card-excerpt"></div></div></a>
+<a href="/news/apple-m5-chip-benchmarks-revealed.html" class="card news-card"><img class="card-image" src="/img/news/news2.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Apple</span><span>July 4, 2026</span></div><div class="card-title">Apple M5 Chip Benchmarks Revealed — 40% Faster Than M4</div><div class="card-excerpt"></div></div></a>
+<a href="/news/google-pixel-10-camera-preview.html" class="card news-card"><img class="card-image" src="/img/news/news3.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Google</span><span>July 3, 2026</span></div><div class="card-title">Google Pixel 10 Camera Preview: AI-Powered Night Sight 3.0</div><div class="card-excerpt"></div></div></a>
+<a href="/news/xiaomi-17-arriving-in-india.html" class="card news-card"><img class="card-image" src="/img/news/news4.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-amber">Xiaomi</span><span>July 2, 2026</span></div><div class="card-title">Xiaomi 17 Confirmed to Launch in India Next Month</div><div class="card-excerpt"></div></div></a>
+<a href="/news/oneplus-14-pro-design-revealed.html" class="card news-card"><img class="card-image" src="/img/news/news5.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-red">OnePlus</span><span>July 1, 2026</span></div><div class="card-title">OnePlus 14 Pro Design Revealed in Official Renders</div><div class="card-excerpt"></div></div></a>
+<a href="/news/nothing-phone-4-concept-unveiled.html" class="card news-card"><img class="card-image" src="/img/news/news6.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-purple">Nothing</span><span>June 30, 2026</span></div><div class="card-title">Nothing Phone (4) Concept Features Transparent OLED Back</div><div class="card-excerpt"></div></div></a>
+<a href="/news/qualcomm-snapdragon-8-gen5-announced.html" class="card news-card"><img class="card-image" src="/img/news/news7.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-purple">Chipsets</span><span>June 29, 2026</span></div><div class="card-title">Qualcomm Snapdragon 8 Gen 5 Announced with 2nm Process</div><div class="card-excerpt"></div></div></a>
+<a href="/news/android-17-features-revealed.html" class="card news-card"><img class="card-image" src="/img/news/news8.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-green">Android</span><span>June 28, 2026</span></div><div class="card-title">Android 17 Features Revealed: Desktop Mode, New Notifications</div><div class="card-excerpt"></div></div></a>
+<a href="/news/ios-20-public-beta-available.html" class="card news-card"><img class="card-image" src="/img/news/news9.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Apple</span><span>June 27, 2026</span></div><div class="card-title">iOS 20 Public Beta Now Available — How to Install</div><div class="card-excerpt"></div></div></a>
+<a href="/news/mediatek-dimensity-10000-benchmark.html" class="card news-card"><img class="card-image" src="/img/news/news10.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-purple">Chipsets</span><span>June 26, 2026</span></div><div class="card-title">MediaTek Dimensity 10000 Benchmarks Challenge Snapdragon 8 Elite</div><div class="card-excerpt"></div></div></a>
+<a href="/news/samsung-confirms-that-the-galaxy-z-fold8-and-z-fold8-ultra-will-use-a-snapdragon.html" class="card news-card"><img class="card-image" src="/img/news/samsung-confirms-that-the-galaxy-z-fold8-and-z-fold8-ultra-will-use-a-snapdragon_hero.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-red">Samsung</span><span>07 July 2026</span></div><div class="card-title">Samsung confirms that the Galaxy Z Fold8 and Z Fold8 Ultra will use a Snapdragon 8 Elite Gen 5</div><div class="card-excerpt"></div></div></a>
+<a href="/news/developer-turns-sonys-headphones-into-realtime-head-tracker-for-pc-simulators.html" class="card news-card"><img class="card-image" src="https://fdn.gsmarena.com/imgroot/news/26/05/sony-1000x-the-collexion-yes-really-ifr/-344x215/gsmarena_000.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Sony</span><span>07 July 2026</span></div><div class="card-title">Developer turns Sony's headphones into real-time head tracker for PC simulators</div><div class="card-excerpt"></div></div></a>
+<a href="/news/nothing-ear-3a-unveiled-with-anc-and-up-to-42-hours-of-total-battery-life.html" class="card news-card"><img class="card-image" src="/img/news/nothing-ear-3a-unveiled-with-anc-and-up-to-42-hours-of-total-battery-life_hero.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-purple">Nothing</span><span>07 July 2026</span></div><div class="card-title">Nothing Ear (3a) unveiled with ANC and up to 42 hours of total battery life</div><div class="card-excerpt"></div></div></a>
+<a href="/news/tecno-andvisual-artist-anglica-dass-start-the-100-portraits-of-becoming-initiati.html" class="card news-card"><img class="card-image" src="/img/news/tecno-andvisual-artist-anglica-dass-start-the-100-portraits-of-becoming-initiati_hero.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Tecno</span><span>07 July 2026</span></div><div class="card-title">Tecno and visual artist Angélica Dass start the “100 Portraits of Becoming” initiative</div><div class="card-excerpt"></div></div></a>
+<a href="/news/honor-robot-phone-gets-a-rumored-launch-month.html" class="card news-card"><img class="card-image" src="/img/news/honor-robot-phone-gets-a-rumored-launch-month_hero.jpg" alt=""><div class="card-body"><div class="card-meta"><span class="badge badge-amber">Honor</span><span>07 July 2026</span></div><div class="card-title">Honor Robot Phone gets a rumored launch month</div><div class="card-excerpt"></div></div></a>
+</div>
+</div></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about.html">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>

@@ -1,0 +1,131 @@
+/* ========================================
+   HOME — Homepage Styles
+   ======================================== */
+
+/* Hero */
+.hero {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, var(--color-accent-muted) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--space-lg);
+}
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+.hero-main {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-main img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-main .hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-2xl);
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  width: 100%;
+}
+.hero-main .hero-overlay .badge { margin-bottom: var(--space-sm); }
+.hero-main .hero-overlay h2 {
+  font-size: var(--text-3xl);
+  color: #fff;
+  margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.hero-main .hero-overlay p {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.7);
+  max-width: 500px;
+}
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.hero-side-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex: 1;
+  min-height: 195px;
+  display: flex;
+  align-items: flex-end;
+}
+.hero-side-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-side-card .hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-lg);
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  width: 100%;
+}
+.hero-side-card .hero-overlay h3 {
+  font-size: var(--text-base);
+  color: #fff;
+  line-height: 1.3;
+}
+
+/* Trending Phones */
+.trending-scroll {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  padding-bottom: var(--space-md);
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.trending-scroll::-webkit-scrollbar { display: none; }
+.trending-scroll .phone-card {
+  min-width: 200px;
+  max-width: 220px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Compare CTA */
+.compare-cta {
+  background: linear-gradient(135deg, var(--color-accent-muted), var(--color-purple-muted));
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  text-align: center;
+}
+.compare-cta h2 { margin-bottom: var(--space-sm); }
+.compare-cta p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your destination for technology news, smartphone specifications, comparisons, and expert reviews.">
+  <title>SITENAME — Tech News, Phone Specs & Reviews</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      // Update title immediately to avoid flashing
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      // Intercept and update .site-name elements as they are parsed to prevent layout flashing
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="nav-logo site-name">TechSpecs</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/news/" class="nav-link">News</a>
+        <a href="/phones/" class="nav-link">Phones</a>
+        <a href="/compare/" class="nav-link">Compare</a>
+        <a href="/reviews/" class="nav-link">Reviews</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+      <div class="search-header">
+        <div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews...">
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults"><p class="search-empty">Type to search across all content</p></div>
+    </div>
+  </div>
+
+  <main class="page-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid reveal">
+          <a href="/news/samsung-galaxy-s26-ultra-leaked.html" class="hero-main">
+            <img src="/img/hero/hero1.jpg" alt="Samsung Galaxy S26 Ultra">
+            <div class="hero-overlay">
+              <span class="badge badge-red">Breaking</span>
+              <h2>Samsung Galaxy S26 Ultra Design Leaked</h2>
+              <p>Slimmer bezels, new camera module, and a completely redesigned titanium frame — here's everything we know so far.</p>
+            </div>
+          </a>
+          <div class="hero-side">
+            <a href="/news/apple-m5-chip-benchmarks-revealed.html" class="hero-side-card">
+              <img src="/img/hero/hero2.jpg" alt="Apple M5">
+              <div class="hero-overlay">
+                <span class="badge badge-accent" style="margin-bottom:6px;font-size:0.65rem">Apple</span>
+                <h3>Apple M5 Chip Benchmarks — 40% Faster</h3>
+              </div>
+            </a>
+            <a href="/news/qualcomm-snapdragon-8-gen5-announced.html" class="hero-side-card">
+              <img src="/img/hero/hero3.jpg" alt="Snapdragon">
+              <div class="hero-overlay">
+                <span class="badge badge-purple" style="margin-bottom:6px;font-size:0.65rem">Chipsets</span>
+                <h3>Snapdragon 8 Gen 5 Goes 2nm</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Phones -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Trending Phones</h2>
+          <a href="/phones/" class="section-link">All Phones</a>
+        </div>
+        <div class="trending-scroll reveal">
+          <a href="/phones/samsung/galaxy-s25-ultra.html" class="card phone-card"><img class="card-image" src="/img/phones/s25-ultra.svg" alt="Galaxy S25 Ultra"><div class="card-body"><div class="phone-name">Galaxy S25 Ultra</div><div class="phone-price">$1,299</div><div class="phone-specs-mini"><span>6.9"</span><span>SD 8 Elite</span><span>200MP</span></div></div></a>
+          <a href="/phones/apple/iphone-16-pro-max.html" class="card phone-card"><img class="card-image" src="/img/phones/iphone-16-pm.svg" alt="iPhone 16 Pro Max"><div class="card-body"><div class="phone-name">iPhone 16 Pro Max</div><div class="phone-price">$1,199</div><div class="phone-specs-mini"><span>6.9"</span><span>A18 Pro</span><span>48MP</span></div></div></a>
+          <a href="/phones/oneplus/oneplus-13.html" class="card phone-card"><img class="card-image" src="/img/phones/oneplus-13.svg" alt="OnePlus 13"><div class="card-body"><div class="phone-name">OnePlus 13</div><div class="phone-price">$899</div><div class="phone-specs-mini"><span>6.82"</span><span>SD 8 Elite</span><span>6000mAh</span></div></div></a>
+          <a href="/phones/google/pixel-9-pro.html" class="card phone-card"><img class="card-image" src="/img/phones/pixel-9-pro.svg" alt="Pixel 9 Pro"><div class="card-body"><div class="phone-name">Pixel 9 Pro</div><div class="phone-price">$999</div><div class="phone-specs-mini"><span>6.3"</span><span>Tensor G4</span><span>50MP</span></div></div></a>
+          <a href="/phones/xiaomi/15-ultra.html" class="card phone-card"><img class="card-image" src="/img/phones/xiaomi-15u.svg" alt="Xiaomi 15 Ultra"><div class="card-body"><div class="phone-name">Xiaomi 15 Ultra</div><div class="phone-price">$999</div><div class="phone-specs-mini"><span>6.73"</span><span>SD 8 Elite</span><span>200MP</span></div></div></a>
+          <a href="/phones/nothing/phone-3.html" class="card phone-card"><img class="card-image" src="/img/phones/nothing-3.svg" alt="Nothing Phone 3"><div class="card-body"><div class="phone-name">Nothing Phone (3)</div><div class="phone-price">$599</div><div class="phone-specs-mini"><span>6.5"</span><span>SD 8s G3</span><span>50MP</span></div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Latest News</h2>
+          <a href="/news/" class="section-link">All News</a>
+        </div>
+        <div class="grid grid-3 reveal">
+          <a href="/news/google-pixel-10-camera-preview.html" class="card news-card"><img class="card-image" src="/img/news/news3.jpg" alt="Pixel 10 Camera"><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Google</span><span>July 3, 2026</span></div><div class="card-title">Google Pixel 10 Camera Preview: AI-Powered Night Sight 3.0</div><div class="card-excerpt">Google's next-gen computational photography engine promises dramatic low-light improvements.</div></div></a>
+          <a href="/news/xiaomi-17-arriving-in-india.html" class="card news-card"><img class="card-image" src="/img/news/news4.jpg" alt="Xiaomi 17"><div class="card-body"><div class="card-meta"><span class="badge badge-amber">Xiaomi</span><span>July 2, 2026</span></div><div class="card-title">Xiaomi 17 Confirmed to Launch in India Next Month</div><div class="card-excerpt">The flagship will arrive with Snapdragon 8 Gen 5 and Leica-tuned cameras.</div></div></a>
+          <a href="/news/android-17-features-revealed.html" class="card news-card"><img class="card-image" src="/img/news/news8.jpg" alt="Android 17"><div class="card-body"><div class="card-meta"><span class="badge badge-green">Android</span><span>June 28, 2026</span></div><div class="card-title">Android 17 Features Revealed: Desktop Mode & More</div><div class="card-excerpt">Google's next major OS update brings native desktop mode, redesigned notifications, and more.</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Popular Reviews</h2>
+          <a href="/reviews/" class="section-link">All Reviews</a>
+        </div>
+        <div class="grid grid-3 reveal">
+          <a href="/reviews/samsung-galaxy-s25-ultra-review.html" class="card review-card"><img class="card-image" src="/img/reviews/rev1.jpg" alt="S25 Ultra Review"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rating-num">9.2</span></div><div class="card-title">Samsung Galaxy S25 Ultra Review</div><div class="verdict">The best big-screen Android phone yet</div></div></a>
+          <a href="/reviews/iphone-16-pro-max-review.html" class="card review-card"><img class="card-image" src="/img/reviews/rev2.jpg" alt="iPhone Review"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">9.0</span></div><div class="card-title">iPhone 16 Pro Max Review</div><div class="verdict">Apple refines the formula with stellar battery life</div></div></a>
+          <a href="/reviews/oneplus-13-review.html" class="card review-card"><img class="card-image" src="/img/reviews/rev4.jpg" alt="OnePlus Review"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">8.9</span></div><div class="card-title">OnePlus 13 Review</div><div class="verdict">The flagship killer grows up</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compare CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="compare-cta reveal">
+          <h2>Compare Phones Side by Side</h2>
+          <p>Can't decide? Put any two phones head-to-head and see how they stack up across every spec.</p>
+          <a href="/compare/" class="btn btn-primary">Open Compare Tool</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3>
+          <p>Your source for the latest tech news, detailed smartphone specifications, side-by-side comparisons, and expert reviews.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Browse</h4>
+          <a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a>
+        </div>
+        <div class="footer-col">
+          <h4>Brands</h4>
+          <a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="/about.html">About</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved. Data aggregated from multiple sources.</p></div>
+    </div>
+  </footer>
+
+  <script src="/js/phones-data.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/search.js"></script>
+</body>
+</html>

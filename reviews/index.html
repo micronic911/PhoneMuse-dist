@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Expert smartphone reviews with detailed analysis, ratings, and verdicts.">
+<title>Phone Reviews — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/reviews.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>Reviews</span></nav>
+<div class="section-header"><h1 class="section-title">Expert Reviews</h1></div>
+<div class="reviews-grid">
+<a href="/reviews/samsung-galaxy-s25-ultra-review.html" class="card review-card"><img class="card-image" src="/img/reviews/default.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">9.2</span></div><div class="card-title">Samsung Galaxy S25 Ultra Review</div><div class="verdict">The best big-screen Android phone yet</div></div></a>
+<a href="/reviews/iphone-16-pro-max-review.html" class="card review-card"><img class="card-image" src="/img/reviews/default.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">9</span></div><div class="card-title">iPhone 16 Pro Max Review</div><div class="verdict">Apple refines the formula with stellar battery life</div></div></a>
+<a href="/reviews/google-pixel-9-pro-review.html" class="card review-card"><img class="card-image" src="/img/reviews/default.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">8.8</span></div><div class="card-title">Google Pixel 9 Pro Review</div><div class="verdict">AI smarts meet excellent cameras</div></div></a>
+<a href="/reviews/oneplus-13-review.html" class="card review-card"><img class="card-image" src="/img/reviews/default.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">8.9</span></div><div class="card-title">OnePlus 13 Review</div><div class="verdict">The flagship killer grows up</div></div></a>
+<a href="/reviews/xiaomi-15-ultra-review.html" class="card review-card"><img class="card-image" src="/img/reviews/default.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">8.7</span></div><div class="card-title">Xiaomi 15 Ultra Review</div><div class="verdict">Camera champion with blazing performance</div></div></a>
+<a href="/reviews/oppo-reno16-review.html" class="card review-card"><img class="card-image" src="/img/reviews/oppo-reno16-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">4.1</span></div><div class="card-title">Oppo Reno16 review</div><div class="verdict">In-depth review of the Oppo Reno16</div></div></a>
+<a href="/reviews/tecno-pova-8-review.html" class="card review-card"><img class="card-image" src="/img/reviews/tecno-pova-8-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">3.8</span></div><div class="card-title">Tecno Pova 8 review</div><div class="verdict">In-depth review of the Tecno Pova 8</div></div></a>
+<a href="/reviews/motorola-razr-fold-review.html" class="card review-card"><img class="card-image" src="/img/reviews/motorola-razr-fold-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">4.7</span></div><div class="card-title">Motorola Razr Fold review</div><div class="verdict">In-depth review of the Motorola Razr Fold</div></div></a>
+<a href="/reviews/oppo-reno16-pro-review.html" class="card review-card"><img class="card-image" src="/img/reviews/oppo-reno16-pro-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">4.2</span></div><div class="card-title">Oppo Reno16 Pro review</div><div class="verdict">In-depth review of the Oppo Reno16 Pro</div></div></a>
+<a href="/reviews/motorola-razr-70-ultra-review.html" class="card review-card"><img class="card-image" src="/img/reviews/motorola-razr-70-ultra-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">4.3</span></div><div class="card-title">Motorola Razr 70 Ultra/Razr Ultra 2026 review</div><div class="verdict">In-depth review of the Motorola Razr 70 Ultra/Razr Ultra 2026</div></div></a>
+<a href="/reviews/samsung-galaxy-a27-review.html" class="card review-card"><img class="card-image" src="/img/reviews/samsung-galaxy-a27-review_thumb.jpg" alt=""><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">3.5</span></div><div class="card-title">Samsung Galaxy A27 review</div><div class="verdict">In-depth review of the Samsung Galaxy A27</div></div></a>
+</div>
+</div></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about.html">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>

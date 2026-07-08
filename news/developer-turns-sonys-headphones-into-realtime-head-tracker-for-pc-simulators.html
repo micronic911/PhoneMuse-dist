@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Developer turns Sony's headphones into real-time head tracker for PC simulators">
+<title>Developer turns Sony's headphones into real-time head tracker for PC simulators — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/news.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/news/">News</a><span class="sep">/</span><span>Sony</span></nav>
+<article>
+<div class="article-header">
+<span class="badge badge-red" style="margin-bottom:var(--space-md);display:inline-flex">Sony</span>
+<h1>Developer turns Sony's headphones into real-time head tracker for PC simulators</h1>
+<div class="article-meta"><span>07 July 2026</span><span>·</span><span>Ro</span><span>·</span><span>2 min read</span></div>
+</div>
+<img class="article-hero-img" src="https://fdn.gsmarena.com/imgroot/news/26/05/sony-1000x-the-collexion-yes-really-ifr/-344x215/gsmarena_000.jpg" alt="Developer turns Sony's headphones into real-time head tracker for PC simulators">
+<div class="article-body">
+<p>Most modern, high-end headphones and earbuds have accelerometers and gyroscopes used for the spatial audio feature that requires precise tracking of head movements in order to make the sound immersive. Sony's WF-1000 and WH-1000 lineups also have the needed hardware, and someone came up with the idea of utilizing those sensors for in-game controls.</p>
+
+<p>Developer Nicholas Slattery started a project called Sony Head Tracker, and it's already compatible with hundreds of PC games, including Microsoft Flight Simulator and Assetto Corsa.</p>
+
+<blockquote class="reddit-embed-bq" style="height:500px" data-embed-height="546">
+<a href="https://www.reddit.com/r/pcmasterrace/comments/1uoa1m8/i_made_sony_headphones_work_as_a_free_head/">I made Sony headphones work as a free head tracker for 200+ PC games</a><br> by
+<a href="https://www.reddit.com/user/NSlattery43/">u/NSlattery43</a> in
+<a href="https://www.reddit.com/r/pcmasterrace/">pcmasterrace</a>
+</blockquote>
+
+<p>Sony headphones already have the Android Head Tracker protocol baked into the firmware, but it's completely ignored by Windows. So, Slattery's Sony Head Tracker app acts as a bridge between the hardware and the OpenTrack software, which in turn supports over 200 PC games, and it's designed to work with phones, webcams and eye or IR trackers.</p>
+
+<p>Sony's WH/WF-1000XM6, WH/WF-1000XM5, and ULT WEAR (WH-ULT900N) are currently supported as they are the only ones supporting spatial audio. Apple's headphones and earbuds, however, use a proprietary protocol, so they won't work with Windows.</p>
+
+<p>If you own a pair and you enjoy PC simulator games, this is a very cost-effective way to make your experience a tad more immersive. Judging by the demo video, the head tracking is at a VR headset level.</p>
+
+<p class="article-source"><a href="https://www.reddit.com/r/pcmasterrace/comments/1uoa1m8/i_made_sony_headphones_work_as_a_free_head/?embed_host_url=https%3A%2F%2Fwww.tomshardware.com%2Fvideo-games%2Fpc-gaming%2Fyou-can-now-use-your-sony-headphones-as-a-real-time-head-tracker-for-race-and-flight-simulators-on-pc-several-hundred-games-already-supported-enthusiast-creates-open-source-app-that-translates-live-sensor-data-into-in-game-camera-controls" target="_blank" rel="noopener noreferrer">Source</a></p>
+</div>
+</article>
+</div></main>
+<div class="reading-progress" id="readingProgress"></div>
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>
+(function(){
+  var bar = document.getElementById('readingProgress');
+  var btt = document.getElementById('backToTop');
+  var article = document.querySelector('article');
+  if (!bar || !article) return;
+  var ticking = false;
+  function updateProgress() {
+    var docHeight = document.documentElement.scrollHeight;
+    var viewHeight = window.innerHeight;
+    var scrollable = docHeight - viewHeight;
+    if (scrollable <= 0) { bar.style.width = '100%'; ticking = false; return; }
+    var pct = Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100));
+    bar.style.width = pct + '%';
+    if (btt) {
+      if (window.scrollY > 300) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  window.addEventListener('load', updateProgress);
+  updateProgress();
+  if (btt) {
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about.html">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>
