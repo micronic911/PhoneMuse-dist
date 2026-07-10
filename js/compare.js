@@ -96,9 +96,14 @@
         outHtml += `<div class="compare-group-header">${groupLabel}</div>`;
 
         allKeys.forEach(key => {
-          const v1 = group1[key] || '—';
-          const v2 = group2[key] || '—';
+          let v1 = group1[key] || '—';
+          let v2 = group2[key] || '—';
           const winner = getWinner(key, v1, v2);
+          
+          if (winner === 0 && v1 !== v2 && v1 !== '—' && v2 !== '—') {
+            [v1, v2] = highlightDiff(v1, v2);
+          }
+
           outHtml += `
             <div class="compare-table-row">
               <div class="spec-name">${key}</div>
@@ -133,6 +138,29 @@
       });
     });
     return specs;
+  }
+
+  /* Highlight text differences between two specification values */
+  function highlightDiff(v1, v2) {
+    if (v1 === v2 || v1 === '—' || v2 === '—') return [v1, v2];
+    const wordRegex = /([a-zA-Z0-9.\-]+)/;
+    const t1 = v1.split(wordRegex);
+    const t2 = v2.split(wordRegex);
+    
+    const w1 = new Set(t1.filter(t => wordRegex.test(t)).map(t => t.toLowerCase()));
+    const w2 = new Set(t2.filter(t => wordRegex.test(t)).map(t => t.toLowerCase()));
+    
+    const out1 = t1.map(t => {
+      if (wordRegex.test(t) && !w2.has(t.toLowerCase())) return `<strong>${t}</strong>`;
+      return t;
+    }).join('');
+    
+    const out2 = t2.map(t => {
+      if (wordRegex.test(t) && !w1.has(t.toLowerCase())) return `<strong>${t}</strong>`;
+      return t;
+    }).join('');
+    
+    return [out1, out2];
   }
 
   /* Determine winner for numeric-like specs */
