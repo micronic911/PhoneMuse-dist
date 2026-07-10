@@ -66,8 +66,8 @@
     
     try {
       const [html1, html2] = await Promise.all([
-        fetch(`/phones/${p1.brandSlug}/${p1.slug}.html`).then(r => r.text()),
-        fetch(`/phones/${p2.brandSlug}/${p2.slug}.html`).then(r => r.text())
+        fetch(`/phones/${p1.brandSlug}/${p1.slug}`).then(r => r.text()),
+        fetch(`/phones/${p2.brandSlug}/${p2.slug}`).then(r => r.text())
       ]);
 
       const parser = new DOMParser();
