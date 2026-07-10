@@ -53,45 +53,86 @@
   }
 
   /* Build comparison table */
-  function buildTable() {
+  async function buildTable() {
     const k1 = sel1.value, k2 = sel2.value;
     if (!k1 || !k2 || !phonesData[k1] || !phonesData[k2]) {
       tableWrap.innerHTML = '<p class="search-empty">Select two phones to compare their specifications</p>';
       return;
     }
 
+    tableWrap.innerHTML = '<p class="search-empty" style="text-align:center">Loading specifications...</p>';
+
     const p1 = phonesData[k1], p2 = phonesData[k2];
-    const specGroups = ['display', 'performance', 'camera', 'battery', 'connectivity', 'general'];
-    const groupLabels = { display: 'Display', performance: 'Performance', camera: 'Camera', battery: 'Battery', connectivity: 'Connectivity', general: 'General' };
+    
+    try {
+      const [html1, html2] = await Promise.all([
+        fetch(`/phones/${p1.brandSlug}/${p1.slug}.html`).then(r => r.text()),
+        fetch(`/phones/${p2.brandSlug}/${p2.slug}.html`).then(r => r.text())
+      ]);
 
-    let html = `
-      <div class="compare-table-header">
-        <div>Specification</div>
-        <div>${p1.name}</div>
-        <div>${p2.name}</div>
-      </div>`;
+      const parser = new DOMParser();
+      const doc1 = parser.parseFromString(html1, 'text/html');
+      const doc2 = parser.parseFromString(html2, 'text/html');
 
-    specGroups.forEach(group => {
-      const s1 = p1.specs[group] || {};
-      const s2 = p2.specs[group] || {};
-      const allKeys = [...new Set([...Object.keys(s1), ...Object.keys(s2)])];
+      const s1 = extractSpecs(doc1);
+      const s2 = extractSpecs(doc2);
 
-      html += `<div class="compare-group-header">${groupLabels[group]}</div>`;
+      const specGroups = ['Display', 'Performance', 'Camera', 'Battery', 'Connectivity', 'General'];
 
-      allKeys.forEach(key => {
-        const v1 = s1[key] || '—';
-        const v2 = s2[key] || '—';
-        const winner = getWinner(key, v1, v2);
-        html += `
-          <div class="compare-table-row">
-            <div class="spec-name">${key}</div>
-            <div class="${winner === 1 ? 'winner' : ''}" style="font-family:var(--font-mono);font-size:var(--text-sm)">${v1}</div>
-            <div class="${winner === 2 ? 'winner' : ''}" style="font-family:var(--font-mono);font-size:var(--text-sm)">${v2}</div>
-          </div>`;
+      let outHtml = `
+        <div class="compare-table-header">
+          <div>Specification</div>
+          <div>${p1.name}</div>
+          <div>${p2.name}</div>
+        </div>`;
+
+      specGroups.forEach(groupLabel => {
+        const group1 = s1[groupLabel] || {};
+        const group2 = s2[groupLabel] || {};
+        const allKeys = [...new Set([...Object.keys(group1), ...Object.keys(group2)])];
+        
+        if (allKeys.length === 0) return;
+
+        outHtml += `<div class="compare-group-header">${groupLabel}</div>`;
+
+        allKeys.forEach(key => {
+          const v1 = group1[key] || '—';
+          const v2 = group2[key] || '—';
+          const winner = getWinner(key, v1, v2);
+          outHtml += `
+            <div class="compare-table-row">
+              <div class="spec-name">${key}</div>
+              <div class="${winner === 1 ? 'winner' : ''}" style="font-family:var(--font-mono);font-size:var(--text-sm)">${v1}</div>
+              <div class="${winner === 2 ? 'winner' : ''}" style="font-family:var(--font-mono);font-size:var(--text-sm)">${v2}</div>
+            </div>`;
+        });
+      });
+
+      tableWrap.innerHTML = outHtml;
+    } catch (e) {
+      console.error('Compare fetch error:', e);
+      tableWrap.innerHTML = '<p class="search-empty">Failed to load specifications.</p>';
+    }
+  }
+
+  function extractSpecs(doc) {
+    const specs = {};
+    const groups = doc.querySelectorAll('.spec-group');
+    groups.forEach(group => {
+      const title = group.querySelector('.spec-group-title');
+      if (!title) return;
+      const groupName = title.textContent.trim();
+      specs[groupName] = {};
+      const rows = group.querySelectorAll('.spec-row');
+      rows.forEach(row => {
+        const label = row.querySelector('.spec-label');
+        const value = row.querySelector('.spec-value');
+        if (label && value) {
+          specs[groupName][label.textContent.trim()] = value.innerHTML.replace(/<br\s*\/?>/gi, ', ').replace(/<[^>]+>/g, '').trim();
+        }
       });
     });
-
-    tableWrap.innerHTML = html;
+    return specs;
   }
 
   /* Determine winner for numeric-like specs */
