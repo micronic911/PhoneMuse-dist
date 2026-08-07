@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Expert smartphone reviews with detailed analysis, ratings, and verdicts.">
+<title>Phone Reviews — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/reviews.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><span>Reviews</span></nav>
+<div class="section-header"><h1 class="section-title">Expert Reviews</h1></div>
+<div class="reviews-grid">
+<a href="/reviews/samsung-galaxy-z-fold8-ultra-review" class="card review-card"><img class="card-image" src="/img/reviews/samsung-galaxy-z-fold8-ultra-review_hero.webp" alt="" decoding="async" fetchpriority="high"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span><span class="rating-num">4.6</span></div><div class="card-title">Samsung Galaxy Z Fold8 Ultra review</div><div class="verdict">In-depth review of the Samsung Galaxy Z Fold8 Ultra</div></div></a>
+<a href="/reviews/samsung-galaxy-z-fold8-review" class="card review-card"><img class="card-image" src="/img/reviews/samsung-galaxy-z-fold8-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span><span class="rating-num">4.6</span></div><div class="card-title">Samsung Galaxy Z Fold8 review</div><div class="verdict">In-depth review of the Samsung Galaxy Z Fold8</div></div></a>
+<a href="/reviews/huawei-pura-90s-pro-max-review" class="card review-card"><img class="card-image" src="/img/reviews/huawei-pura-90s-pro-max-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">4.2</span></div><div class="card-title">Huawei Pura 90s Pro Max review</div><div class="verdict">In-depth review of the Huawei Pura 90s Pro Max</div></div></a>
+<a href="/reviews/galaxy-z-fold8-z-fold8-ultra-z-flp8-handson-review" class="card review-card"><img class="card-image" src="/img/reviews/galaxy-z-fold8-z-fold8-ultra-z-flp8-handson-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="rating-num">0</span></div><div class="card-title">Samsung Galaxy Z Fold8, Z Fold8 Ultra, Z Flip8 hands-on review</div><div class="verdict">In-depth review of the Samsung Galaxy Z Fold8, Z Fold8 Ultra, Z Flip8 hands-on</div></div></a>
+<a href="/reviews/redmi-note-15-pro-4g-review" class="card review-card"><img class="card-image" src="/img/reviews/redmi-note-15-pro-4g-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span><span class="star empty">★</span><span class="rating-num">3.7</span></div><div class="card-title">Xiaomi Redmi Note 15 Pro 4G review</div><div class="verdict">In-depth review of the Xiaomi Redmi Note 15 Pro 4G</div></div></a>
+</div>
+
+</div></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>

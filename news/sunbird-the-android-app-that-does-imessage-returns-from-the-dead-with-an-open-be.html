@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunbird, the Android app that does iMessage, returns from the dead with an open beta">
+<title>Sunbird, the Android app that does iMessage, returns from the dead with an open beta — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/news.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/news/">News</a><span class="sep">/</span><span>Android</span></nav>
+<article>
+<div class="article-header">
+<span class="badge badge-red" style="margin-bottom:var(--space-md);display:inline-flex">Android</span>
+<h1>Sunbird, the Android app that does iMessage, returns from the dead with an open beta</h1>
+<div class="article-meta"><span>06 August 2026</span><span>·</span><span>Peter</span><span>·</span><span>2 min read</span></div>
+</div>
+<img class="article-hero-img" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_hero.webp" alt="Sunbird, the Android app that does iMessage, returns from the dead with an open beta" decoding="async" fetchpriority="high">
+<div class="article-body">
+<p>The EU has been throwing its weight around, trying to force interoperability between the major digital platforms. But companies can work at the issue too – companies like Sunbird, which may as well be called “phoenix” since it’s back from the dead.</p>
+
+<p>Sunbird has built an Android app that promises proper iMessage support. Is that still necessary now that Apple devices support RCS? The company points out that RCS messages still appear in a green bubble to iPhone users. Also, some features like reactions, replies and iMessage group features still don’t work properly when RCS gets involved.</p>
+
+<p>So, Sunbird – the app promises full support for iMessage chats without requiring any additional hardware. It also supports RCS and SMS/MMS, so all your texting can reside in one app (there’s more coming soon – read below).</p>
+
+<div class="image-gallery-wrapper image-single"><div class="image-gallery"><img alt="The Sunbird app promises full support for iMessage chats" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_gsmarena_003.webp" loading="lazy" decoding="async"><img alt="The Sunbird app promises full support for iMessage chats" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_gsmarena_004.webp" loading="lazy" decoding="async"><img alt="The Sunbird app promises full support for iMessage chats" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_gsmarena_005.webp" loading="lazy" decoding="async"></div><div class="gallery-caption">The Sunbird app promises full support for iMessage chats</div></div>
+
+<p>The Sunbird app can be downloaded from the <a href="https://play.google.com/store/apps/details?id=com.sunbird.apps" target="_blank" rel="noopener noreferrer">Google Play Store</a>. Note that this is a paid app – you get a 14-day free trial, after that it’s $2.99 a month or $24.99 a year (this is after a recent price hike from $1.99 a month). The company says that 33% of installs started the free trial (the app was in a closed beta for a time) and 8% converted to paying subscribers.</p>
+
+<p>We should warn you that while the company promises that messages are encrypted on your device and are not stored on Sunbird servers longer than it is necessary to send them to other chat members, the company does not have the best track record when it comes to security.</p>
+
+<p>Back in 2023, Sunbird partnered with Nothing for <a href="nothing_chats_brings_imessage_compatibility_to_android-news-60580.php">Nothing Chats</a>. However, not even a week later, the Sunbird-powered Chats app was <a href="nothings_imessage_clone_pulled_from_the_play_store_over_security_concerns-news-60627.php">pulled from the Play Store</a> over privacy concerns and a few days after that the <a href="nothing_chats_partner_sunbird_temporarily_shuts_down_its_service-news-60658.php">Sunbird service was shut down</a>. It lay dormant since then – or rather the app was reworked and it returned with a closed beta. Now, it’s available to all that want to try it as part of an open beta.</p>
+
+<div class="image-gallery-wrapper image-single"><div class="image-gallery"><img alt="The new Primary and Secondary tabs" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_gsmarena_001.webp" loading="lazy" decoding="async"><img alt="The new Primary and Secondary tabs" src="/img/news/sunbird-the-android-app-that-does-imessage-returns-from-the-dead-with-an-open-be_gsmarena_002.webp" loading="lazy" decoding="async"></div><div class="gallery-caption">The new Primary and Secondary tabs</div></div>
+
+<p>The app arrives with a new feature – two tabs that sort messages into Primary and Secondary. People you talk to often get filed under the Primary tab, while one-off messages (e.g. verification codes) and messages from unknown numbers go in the Secondary tab.</p>
+
+<p>The company also has big plans for the future. It wants to add support for WhatsApp and Facebook Messenger chats, so that you can really do all your texting with one app. This is currently in “late-stage development” and is expected to launch in Q3 (i.e. by the end of September).</p>
+
+<p>AI features are in the works too, of course. Sunbird Intelligence will add an on-device chat summary feature that will help catch you up to busy chats. Also, there will be a built-in, on-device assistant that will be able to carry out simple tasks like writing a reply to messages. The AI features are also planned for a Q3 launch.</p>
+
+<p class="article-source"><a href="https://www.sunbirdapp.com/content/imessage-on-android" target="_blank" rel="noopener noreferrer">Source</a> | <a href="https://9to5google.com/2026/08/05/sunbird-launches-its-imessage-for-android-app/" target="_blank" rel="noopener noreferrer">Via</a></p>
+</div>
+</article>
+</div></main>
+<div class="reading-progress" id="readingProgress"></div>
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>
+(function(){
+  var bar = document.getElementById('readingProgress');
+  var btt = document.getElementById('backToTop');
+  var article = document.querySelector('article');
+  if (!bar || !article) return;
+  var ticking = false;
+  function updateProgress() {
+    var docHeight = document.documentElement.scrollHeight;
+    var viewHeight = window.innerHeight;
+    var scrollable = docHeight - viewHeight;
+    if (scrollable <= 0) { bar.style.width = '100%'; ticking = false; return; }
+    var pct = Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100));
+    bar.style.width = pct + '%';
+    if (btt) {
+      if (window.scrollY > 300) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  window.addEventListener('load', updateProgress);
+  updateProgress();
+  if (btt) {
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>

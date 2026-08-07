@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Your destination for technology news, smartphone specifications, comparisons, and expert reviews.">
+<title>SITENAME — Tech News, Phone Specs &amp; Reviews</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/home.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content">
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid reveal">
+          <a href="/news/samsung-unveils-isocell-hpc-its-first-sensor-with-deeppix-technology" class="hero-main">
+            <img src="/img/news/samsung-unveils-isocell-hpc-its-first-sensor-with-deeppix-technology_hero.webp" alt="Samsung unveils ISOCELL HPC, its first sensor with DeepPix technology" decoding="async" fetchpriority="high">
+            <div class="hero-overlay">
+              <span class="badge badge-red">Samsung</span>
+              <h2>Samsung unveils ISOCELL HPC, its first sensor with DeepPix technology</h2>
+              <p></p>
+            </div>
+          </a>
+          <div class="hero-side">
+            
+            <a href="/news/google-wallet-now-lets-you-set-up-a-dedicated-balance-for-your-kids-and-teens" class="hero-side-card">
+              <img src="/img/news/google-wallet-now-lets-you-set-up-a-dedicated-balance-for-your-kids-and-teens_thumb.webp" alt="Google Wallet now lets you set up a dedicated balance for your kids and teens" loading="lazy" decoding="async" fetchpriority="low">
+              <div class="hero-overlay">
+                <span class="badge badge-accent" style="margin-bottom:6px;font-size:0.65rem">Google</span>
+                <h3>Google Wallet now lets you set up a dedicated balance for your kids and teens</h3>
+              </div>
+            </a>
+            
+            <a href="/news/iqoo-z11-india-processor-colors-confirmed" class="hero-side-card">
+              <img src="/img/news/iqoo-z11-india-processor-colors-confirmed_thumb.webp" alt="Indian iQOO Z11's processor officially confirmed, and it's different from other models" loading="lazy" decoding="async" fetchpriority="low">
+              <div class="hero-overlay">
+                <span class="badge badge-accent" style="margin-bottom:6px;font-size:0.65rem">iQOO</span>
+                <h3>Indian iQOO Z11's processor officially confirmed, and it's different from other models</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Trending Phones</h2>
+          <a href="/phones/" class="section-link">All Phones</a>
+        </div>
+        <div class="trending-scroll reveal">
+          <a href="/phones/samsung/galaxy-f70-pro" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-f70-pro.webp" alt="Samsung Galaxy F70 Pro" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy F70 Pro</div><div class="phone-price"></div><div class="phone-specs-mini"><span>6.7&quot;</span><span>Snapdragon 6 Gen</span><span>50MP</span><span>6000mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-z-fold8-ultra" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-z-fold8-ultra-r1.webp" alt="Samsung Galaxy Z Fold8 Ultra" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy Z Fold8 Ultra</div><div class="phone-price">$2,099.99</div><div class="phone-specs-mini"><span>8.0&quot;</span><span>Snapdragon 8 Elite</span><span>200MP</span><span>5000mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-z-fold8" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-z-fold8.webp" alt="Samsung Galaxy Z Fold8" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy Z Fold8</div><div class="phone-price">$1,899.99</div><div class="phone-specs-mini"><span>7.6&quot;</span><span>Snapdragon 8 Elite</span><span>50MP</span><span>4800mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-z-flip8" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-z-flip8.webp" alt="Samsung Galaxy Z Flip8" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy Z Flip8</div><div class="phone-price">$1,199.99</div><div class="phone-specs-mini"><span>6.9&quot;</span><span>Snapdragon 8 Elite</span><span>50MP</span><span>4300mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-watch-ultra2" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-watch-ultra2.webp" alt="Samsung Galaxy Watch Ultra2" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy Watch Ultra2</div><div class="phone-price">$699.99</div><div class="phone-specs-mini"><span>1.52&quot;</span><span>Snapdragon SW6100 Wear</span><span>800mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-watch9" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-watch9-.webp" alt="Samsung Galaxy Watch9" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy Watch9</div><div class="phone-price">$379.99</div><div class="phone-specs-mini"><span>1.47&quot;</span><span>Snapdragon SW6100 Wear</span><span>445mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-m47" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-m47.webp" alt="Samsung Galaxy M47" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy M47</div><div class="phone-price"></div><div class="phone-specs-mini"><span>6.7&quot;</span><span>Snapdragon 6 Gen</span><span>50MP</span><span>6000mAh</span></div></div></a>
+<a href="/phones/samsung/galaxy-a27" class="card phone-card"><img class="card-image" src="/img/phones/samsung_samsung-galaxy-a27.webp" alt="Samsung Galaxy A27" loading="lazy" decoding="async"><div class="card-body"><div class="phone-name">Samsung Galaxy A27</div><div class="phone-price">€233.84</div><div class="phone-specs-mini"><span>6.7&quot;</span><span>Snapdragon 6 Gen</span><span>50MP</span><span>5000mAh</span></div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Latest News</h2>
+          <a href="/news/" class="section-link">All News</a>
+        </div>
+        <div class="grid grid-3 reveal">
+          <a href="/news/chatgpt-gives-free-users-unlimited-text-chats-while-improving-its-flagship-model" class="card news-card"><img class="card-image" src="/img/news/chatgpt-gives-free-users-unlimited-text-chats-while-improving-its-flagship-model_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="card-meta"><span class="badge badge-accent">ChatGPT</span><span>07 August 2026</span></div><div class="card-title">ChatGPT gives free users unlimited text chats while improving its flagship model</div><div class="card-excerpt"></div></div></a>
+<a href="/news/oppo-kicks-off-coloros-17-closed-beta-testing-device-list-and-rollout-dates-in-t" class="card news-card"><img class="card-image" src="/img/news/oppo-kicks-off-coloros-17-closed-beta-testing-device-list-and-rollout-dates-in-t_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="card-meta"><span class="badge badge-red">Oppo</span><span>07 August 2026</span></div><div class="card-title">Oppo kicks off ColorOS 17 Closed Beta Testing, device list and rollout dates confirmed</div><div class="card-excerpt"></div></div></a>
+<a href="/news/ask-maps-in-google-maps-can-now-order-food-for-you-and-remember-your-past-conver" class="card news-card"><img class="card-image" src="/img/news/ask-maps-in-google-maps-can-now-order-food-for-you-and-remember-your-past-conver_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="card-meta"><span class="badge badge-accent">Google</span><span>07 August 2026</span></div><div class="card-title">Ask Maps in Google Maps can now order food for you and remember your past conversations</div><div class="card-excerpt"></div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Popular Reviews</h2>
+          <a href="/reviews/" class="section-link">All Reviews</a>
+        </div>
+        <div class="grid grid-3 reveal">
+          <a href="/reviews/samsung-galaxy-z-fold8-ultra-review" class="card review-card"><img class="card-image" src="/img/reviews/samsung-galaxy-z-fold8-ultra-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span><span class="rating-num">4.6</span></div><div class="card-title">Samsung Galaxy Z Fold8 Ultra review</div><div class="verdict">In-depth review of the Samsung Galaxy Z Fold8 Ultra</div></div></a>
+<a href="/reviews/samsung-galaxy-z-fold8-review" class="card review-card"><img class="card-image" src="/img/reviews/samsung-galaxy-z-fold8-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star half">★</span><span class="rating-num">4.6</span></div><div class="card-title">Samsung Galaxy Z Fold8 review</div><div class="verdict">In-depth review of the Samsung Galaxy Z Fold8</div></div></a>
+<a href="/reviews/huawei-pura-90s-pro-max-review" class="card review-card"><img class="card-image" src="/img/reviews/huawei-pura-90s-pro-max-review_thumb.webp" alt="" loading="lazy" decoding="async"><div class="card-body"><div class="review-rating"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star empty">★</span><span class="rating-num">4.2</span></div><div class="card-title">Huawei Pura 90s Pro Max review</div><div class="verdict">In-depth review of the Huawei Pura 90s Pro Max</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="compare-cta reveal">
+          <h2>Compare Phones Side by Side</h2>
+          <p>Can't decide? Put any two phones head-to-head and see how they stack up across every spec.</p>
+          <a href="/compare/" class="btn btn-primary">Open Compare Tool</a>
+        </div>
+      </div>
+    </section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>

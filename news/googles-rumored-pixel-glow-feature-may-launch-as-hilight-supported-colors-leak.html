@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak">
+<title>Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak — SITENAME</title>
+  <script>
+    (function() {
+      var s=localStorage.getItem('theme');
+      if(s)document.documentElement.setAttribute('data-theme',s);
+      else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');
+      const host = window.location.hostname || 'TechSpecs';
+      const raw = host.replace(/^www\./, '');
+      const brands={'gsmhq.com':'GSMHq','phonemuse.com':'PhoneMuse'};
+      const name = brands[raw] || raw;
+      if (document.title.includes('SITENAME')) {
+        document.title = document.title.replace(/SITENAME/g, name);
+      }
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === Node.ELEMENT_NODE) {
+              if (n.classList && n.classList.contains('site-name')) {
+                n.textContent = name;
+              }
+              const elements = n.querySelectorAll('.site-name');
+              for (const el of elements) {
+                el.textContent = name;
+              }
+            }
+          }
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', () => observer.disconnect());
+    })();
+  </script>
+<link rel="stylesheet" href="/css/base.css"><link rel="stylesheet" href="/css/components.css"><link rel="stylesheet" href="/css/news.css">
+</head>
+<body><nav class="navbar" id="navbar"><div class="container nav-container"><a href="/" class="nav-logo site-name">TechSpecs</a><div class="nav-links" id="navLinks"><a href="/news/" class="nav-link">News</a><a href="/phones/" class="nav-link">Phones</a><a href="/compare/" class="nav-link">Compare</a><a href="/reviews/" class="nav-link">Reviews</a></div><div class="nav-actions"><button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button><button class="icon-btn nav-hamburger" id="navHamburger" aria-label="Menu"><svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div></div></nav> <div class="search-overlay" id="searchOverlay"><div class="search-modal"><div class="search-header"><div class="search-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><input type="text" class="search-input" id="searchInput" placeholder="Search phones, news, reviews..."><button class="search-close" id="searchClose">ESC</button></div><div class="search-results" id="searchResults"><p class="search-empty">Type to search</p></div></div></div>
+<main class="page-content"><div class="container">
+<nav class="breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/news/">News</a><span class="sep">/</span><span>Google</span></nav>
+<article>
+<div class="article-header">
+<span class="badge badge-red" style="margin-bottom:var(--space-md);display:inline-flex">Google</span>
+<h1>Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak</h1>
+<div class="article-meta"><span>06 August 2026</span><span>·</span><span>Siddharth</span><span>·</span><span>1 min read</span></div>
+</div>
+<img class="article-hero-img" src="/img/news/googles-rumored-pixel-glow-feature-may-launch-as-hilight-supported-colors-leak_hero.webp" alt="Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak" decoding="async" fetchpriority="high">
+<div class="article-body">
+<p>Google's upcoming Pixel 11 Pro series will come with an RGB LED notification light integrated into the rear camera bar. The feature was previously rumored to be called Pixel Glow, but a new leak suggests it could be marketed under the HiLight branding.</p>
+
+<p>Tipster Evan Blass recently shared new <a href="https://x.com/evleaks/status/2084318217758019792" target="_blank" rel="noopener noreferrer">promotional</a> <a href="https://x.com/evleaks/status/2084321639294963941" target="_blank" rel="noopener noreferrer">images</a> of the <a href="google_pixel_11_pro_5g-14801.php">Pixel 11 Pro</a> and <a href="google_teases_pixel_11_pro_fold_in_new_official_video-news-73991.php">Pixel 11 Pro Fold</a> that reference the RGB LED light on the rear camera bar. Notably, the marketing materials refer to the feature as HiLight, rather than the previously rumored Pixel Glow.</p>
+
+<img class="inline-image image-single" src="/img/news/googles-rumored-pixel-glow-feature-may-launch-as-hilight-supported-colors-leak_gsmarena_001.webp" alt="Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak" loading="lazy" decoding="async">
+
+<p>As per the leaked promotional images, the HiLight feature will glow when the Pixel 11 Pro series is placed face down, notifying users of calls from specific contacts or indicating that Gemini is in use.</p>
+
+<p>While we don’t yet know all the intended use cases of the HiLight feature, a <a href="https://9to5google.com/2026/08/05/google-contacts-pixel-11-hilight/" target="_blank" rel="noopener noreferrer">report</a> from 9to5Google claims to have uncovered code in the latest version of the Google Contacts app that sheds light on one of its functionalities.</p>
+
+<img class="inline-image image-single" src="/img/news/googles-rumored-pixel-glow-feature-may-launch-as-hilight-supported-colors-leak_gsmarena_002.webp" alt="Google's rumored Pixel Glow feature may launch as HiLight, supported colors leak" loading="lazy" decoding="async">
+
+<p>According to the code strings, the Google Contacts app will let users assign a HiLight color to individual contacts.</p>
+
+<p>The report adds that users will be able to choose from Blue, Cyan, Green, Orange, Pink, Purple, Teal, White, and Yellow for contact-specific notifications.</p>
+
+<p>The <a href="google_pixel_11_5g-14799.php">Google Pixel 11</a>, Pixel 11 Pro, <a href="google_pixel_11_pro_xl_5g-14800.php">Pixel 11 Pro XL</a>, and the Pixel 11 Pro Fold are set to go <a href="google_officially_reveals_when_its_launching_the_pixel_11_series-news-73620.php">official on August 12</a>.</p>
+</div>
+</article>
+</div></main>
+<div class="reading-progress" id="readingProgress"></div>
+<button id="backToTop" class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+<script>
+(function(){
+  var bar = document.getElementById('readingProgress');
+  var btt = document.getElementById('backToTop');
+  var article = document.querySelector('article');
+  if (!bar || !article) return;
+  var ticking = false;
+  function updateProgress() {
+    var docHeight = document.documentElement.scrollHeight;
+    var viewHeight = window.innerHeight;
+    var scrollable = docHeight - viewHeight;
+    if (scrollable <= 0) { bar.style.width = '100%'; ticking = false; return; }
+    var pct = Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100));
+    bar.style.width = pct + '%';
+    if (btt) {
+      if (window.scrollY > 300) btt.classList.add('visible');
+      else btt.classList.remove('visible');
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function() {
+    if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+  }, { passive: true });
+  window.addEventListener('load', updateProgress);
+  updateProgress();
+  if (btt) {
+    btt.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3 class="site-name" style="font-size:var(--text-xl);margin-bottom:var(--space-sm)">TechSpecs</h3><p>Your source for tech news, phone specs, comparisons, and reviews.</p></div><div class="footer-col"><h4>Browse</h4><a href="/news/">News</a><a href="/phones/">Phones</a><a href="/compare/">Compare</a><a href="/reviews/">Reviews</a></div><div class="footer-col"><h4>Brands</h4><a href="/phones/samsung/">Samsung</a><a href="/phones/apple/">Apple</a><a href="/phones/google/">Google</a><a href="/phones/oneplus/">OnePlus</a><a href="/phones/xiaomi/">Xiaomi</a><a href="/phones/nothing/">Nothing</a></div><div class="footer-col"><h4>More</h4><a href="/about">About</a></div></div><div class="footer-bottom"><p>&copy; 2026 <span class="site-name">TechSpecs</span>. All rights reserved.</p></div></div></footer> <script src="/js/phones-data.js"></script><script src="/js/main.js"></script><script src="/js/search.js"></script></body></html>
